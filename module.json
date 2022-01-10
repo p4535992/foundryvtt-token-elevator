@@ -3,10 +3,10 @@
   "title": "Token Elevator",
   "description": "Change token elevation via hotkeys and mouse-wheel.",
   "author": ["Weissrolf"],
-  "version": "1.0.2",
+  "version": "1.0.3",
   "minimumCoreVersion": "0.9",
   "compatibleCoreVersion": "9.242",
   "scripts": ["scripts/token-elevator.js"],
   "manifest": "https://gitlab.com/Weissrolf/token-elevator/-/raw/main/module.json"
-  "download": "https://gitlab.com/Weissrolf/token-elevator/-/archive/v1.0.2/token-elevator-v1.0.2.zip"
+  "download": "https://gitlab.com/Weissrolf/token-elevator/-/archive/v1.0.3/token-elevator-v1.0.3.zip"
 }
