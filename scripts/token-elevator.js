@@ -1,6 +1,6 @@
 var hoveredToken  // in module scope for checking which token is hovered on
 
-// changes token elevation or resets to 0, prefer hovered on tokens over selected
+// change token elevation or resets to 0, prefer hovered on tokens over selected
 async function setElevation (value) {
   const tokens = hoveredToken ?? canvas.tokens.controlled // hovered or selected?
   const updates = tokens.map(function (token) {
@@ -54,5 +54,5 @@ Hooks.on("renderTokenHUD", () => {
           ? -10
           : -5
     )
-  return catchEvent}) // explicit return added due to rule confusion
+  })
 })
