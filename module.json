@@ -1,0 +1,10 @@
+{
+  "name": "token-elevator",
+  "title": "Token Elevator",
+  "description": "Change token elevation via hotkeys and mouse-wheel.",
+  "author": ["Weissrolf"],
+  "version": "1.0",
+  "minimumCoreVersion": "0.9",
+  "compatibleCoreVersion": "9.242",
+  "scripts": ["scripts/token-elevator.js"]
+}
