@@ -8,5 +8,5 @@
   "compatibleCoreVersion": "9.242",
   "scripts": ["scripts/token-elevator.js"],
   "manifest": "https://gitlab.com/Weissrolf/token-elevator/-/raw/main/module.json"
-  "download": "https://gitlab.com/Weissrolf/token-elevator/-/archive/v1.0.3/token-elevator-v1.0.4.zip"
+  "download": "https://gitlab.com/Weissrolf/token-elevator/-/archive/v1.0.4/token-elevator-v1.0.4.zip"
 }
