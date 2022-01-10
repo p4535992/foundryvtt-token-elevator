@@ -54,5 +54,5 @@ Hooks.on("renderTokenHUD", () => {
           ? -10
           : -5
     )
-  return catchEvent})
+  return catchEvent}) // explicit return added due to rule confusion
 })
