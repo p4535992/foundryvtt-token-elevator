@@ -1,12 +1,20 @@
-# Token Elevator
+## Token Elevator
 Foundry VTT module: Change token elevation via hotkeys and mouse-wheel, priotizing hovered tokens over selected.
 
-# Usage
+## Usage
 - Hover the mouse-pointer over a token and press the hotkeys to change its elevation in steps of +-5 or +-10.
 - Use the hotkeys to change elevation of all selected tokens while your mouse-pointer does *not* hover over a specific token.
 - Open a token's HUD and use the mouse-wheel over the elevation field to change the elevation of all selected tokens by +-5, press shift for +-10.   
 
-#Credits
+## Known issues
+- Default keybind for resetting token elevation to 0 uses ALT modifier, which conflicts with Foundry's default for "Highlight Objects", because the latter messes with hover on detection.
+
+## Future plans
+- Localization.
+- Mouse-wheel changes via token mouse-over instead of having to use the token HUD.
+- Code optimizations once I gained more experience in Javascript and the various APIs (this is my first foray into all of this).
+
+##Credits
 Most of this module's code was made possible by contributions of the Foundry VTT Discord channel #module-development, especially @Freeze, @Varriount and @ghost and others. 
 
 ## License
@@ -26,6 +34,3 @@ PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIG
 HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
