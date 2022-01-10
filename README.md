@@ -14,7 +14,7 @@ Foundry VTT module: Change token elevation via hotkeys and mouse-wheel, priotizi
 - Mouse-wheel changes via token mouse-over instead of having to use the token HUD.
 - Code optimizations once I gained more experience in Javascript and the various APIs (this is my first foray into all of this).
 
-##Credits
+## Credits
 Most of this module's code was made possible by contributions of the Foundry VTT Discord channel #module-development, especially @Freeze, @Varriount and @ghost and others. 
 
 ## License
