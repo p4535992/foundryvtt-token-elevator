@@ -22,7 +22,7 @@ Hooks.on("init", () => {
     { change: 5, preKeys: unipreKey, keyMod: [] },
     { change: 10, preKeys: unipreKey, keyMod: ["Shift"] }
   ]
-  // set up all the above keybindings in one loop
+  // set up all the above keybindings via loop
   for (const key of preKeys) {
     game.keybindings.register("token-elevator", `te${key.change}`, {
       name: `Change token elevation by ${key.change}`,
