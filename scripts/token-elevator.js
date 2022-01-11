@@ -1,14 +1,14 @@
-var hoveredToken  // in module scope for checking which token is hovered on
+let hoveredToken // in module scope for checking which token is hovered on
 
 // change token elevation or reset to 0, prefer hovered tokens over selected
 async function setElevation (value) {
   const tokens = hoveredToken ?? canvas.tokens.controlled // hovered or selected?
   const updates = tokens.map(function (token) {
-      return ({
-        _id: token.id,
-        elevation: value === 0 ? 0 : token.data.elevation + value
-      })
+    return ({
+      _id: token.id,
+      elevation: value === 0 ? 0 : token.data.elevation + value
     })
+  })
   await canvas.scene.updateEmbeddedDocuments("Token", updates)
   // force tokenHUD re-render to update its elevation input dialog on key changes
   if (canvas.hud.token.rendered) canvas.hud.token.render()
@@ -25,7 +25,7 @@ Hooks.on("init", () => {
     { change: 10, preKeys: unipreKey, keyMod: ["Shift"] }
   ]
   // set up all the above keybindings in one loop
-  for (let key of preKeys) {
+  for (const key of preKeys) {
     game.keybindings.register("token-elevator", `te${key.change}`, {
       name: `Change token elevation by ${key.change}`,
       hint: "Change token elevation of hovered or selected tokens.",
