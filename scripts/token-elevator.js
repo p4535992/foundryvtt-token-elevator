@@ -30,7 +30,7 @@ Hooks.on("init", () => {
       name: `Change token elevation by ${key.change}`,
       hint: "Change token elevation of hovered or selected tokens.",
       editable: [{ key: key.preKeys, modifiers: key.keyMod }],
-      onDown: function () {
+      onDown: () => {
         setElevation(key.change) // call to change token elevation
       }
     })
