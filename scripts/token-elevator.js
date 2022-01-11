@@ -28,7 +28,7 @@ Hooks.on("init", () => {
   for (let key of preKeys) {
     game.keybindings.register("token-elevator", `te${key.change}`, {
       name: `Change token elevation by ${key.change}`,
-      hint: "Change token elevation of hovered on or selected tokens.",
+      hint: "Change token elevation of hovered or selected tokens.",
       editable: [{ key: key.preKeys, modifiers: key.keyMod }],
       onDown: function () {
         setElevation(key.change) // call to change token elevation
