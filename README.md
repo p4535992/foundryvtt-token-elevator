@@ -23,4 +23,4 @@ Most of this module's code was made possible by the generous contributions of th
 ## License
 MIT No Attribution
 
-This is effectively "Public Domain". Magic, do as you will. See license file for details.
+This is effectively "Public Domain". Magic, do as you will. See [LICENSE.MD](./LICENSE.MD) file for details.
