@@ -12,6 +12,9 @@ Foundry VTT module: Change token elevation via hotkeys and mouse-wheel, priotizi
 ## Known issues
 - Default keybind for resetting token elevation to 0 uses ALT modifier, which conflicts with Foundry's default for "Highlight Objects", because the latter messes with hover on detection.
 
+## Changelog
+See [CHANGELOG](./CHANGELOG.md) file for details.
+
 ## Future plans
 - Localization.
 - Mouse-wheel changes via token mouse-over instead of having to use the token HUD.
