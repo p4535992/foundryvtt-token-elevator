@@ -1,56 +1,58 @@
-let hoveredToken; // In module scope for checking which token is hovered on
+let hoveredTokens;  // In module scope for checking which token is hovered on
 
 // Change token elevation or reset to 0, prefer hovered tokens over selected
 async function setElevation(value) {
-  const tokens = hoveredToken ?? canvas.tokens.controlled; // Hovered or selected?
-  const updates = tokens.map((token) => ({
-    _id: token.id,
-    elevation: value === 0 ? 0 : token.data.elevation + value,
-  }));
+  const tokens = hoveredTokens ?? canvas.tokens.controlled; // hovered or selected?
+  const updates = tokens.map(function (token) {
+    return ({
+      _id: token.id,
+      elevation: value === 0 ? 0 : token.data.elevation + value,
+    });
+  });
   await canvas.scene.updateEmbeddedDocuments("Token", updates);
-  // Force tokenHUD re-render to update its elevation input dialog on key changes
-  if (canvas.hud.token.rendered) canvas.hud.token.render();
+
+  // Force the token HUD to re-render, so that its elevation input shows the new height.
+  if (canvas.hud.token.rendered) {
+    canvas.hud.token.render();
+  }
 }
 
 // Set up default module keybindings
 Hooks.on("init", () => {
-  const unipreKey = "IntlBackslash"; // Sefault single key for everything
+  const unipreKey = "IntlBackslash"; // Default single key for everything
   const preKeys = [
-    { change: -10, preKeys: unipreKey, keyMod: ["Control", "Shift"] },
-    { change: -5, preKeys: unipreKey, keyMod: ["Control"] },
-    { change: 0, preKeys: unipreKey, keyMod: ["Alt", "Shift"] },
-    { change: 5, preKeys: unipreKey, keyMod: [] },
-    { change: 10, preKeys: unipreKey, keyMod: ["Shift"] },
+    {change: -10, preKeys: unipreKey, keyMod: ["Control", "Shift"]},
+    {change: -5, preKeys: unipreKey, keyMod: ["Control"]},
+    {change: 0, preKeys: unipreKey, keyMod: ["Alt", "Shift"]},
+    {change: 5, preKeys: unipreKey, keyMod: []},
+    {change: 10, preKeys: unipreKey, keyMod: ["Shift"]},
   ];
-  // Set up all the above keybindings via loop
-  for (const key of preKeys) {
+
+  // Set up all the above keybindings in one loop
+  for (let key of preKeys) {
     game.keybindings.register("token-elevator", `te${key.change}`, {
       name: `Change token elevation by ${key.change}`,
       hint: "Change token elevation of hovered or selected tokens.",
-      editable: [{ key: key.preKeys, modifiers: key.keyMod }],
+      editable: [{key: key.preKeys, modifiers: key.keyMod}],
       onDown: () => {
-        setElevation(key.change); // Call to change token elevation
+        setElevation(key.change); // call to change token elevation
       },
     });
   }
 });
 
-// Query if token is hovered on
+// Track which token is currently being hovered over
 Hooks.on("hoverToken", function (token, hovered) {
-  hoveredToken = hovered ? [token] : null;
+  hoveredTokens = hovered ? [token] : null;
 });
 
-// Allow mousewheel to change value of tokenHUD elevation box
+// Allow the mousewheel to change the value of the token HUD elevation input
 Hooks.on("renderTokenHUD", () => {
-  $(".elevation").bind("wheel", (catchEvent) => {
-    setElevation(
-      catchEvent.originalEvent.wheelDelta > 0
-        ? event.shiftKey // Event. deprecated?
-          ? 10
-          : 5
-        : event.shiftKey // E   vent. depredated?
-        ? -10
-        : -5
-    );
+  $(".elevation").on("wheel", (catchEvent) => {
+    const originalEvent = catchEvent.originalEvent;
+    const value = originalEvent.shiftKey ? 10 : 5;
+    const sign = originalEvent.wheelDelta > 0 ? 1 : -1;
+
+    setElevation(value * sign);
   });
 });
