@@ -38,7 +38,7 @@ Hooks.on("init", () => {
 });
 
 // Track which token is currently being hovered over
-Hooks.on("hoverToken", function (token, hovered) {
+Hooks.on("hoverToken", (token, hovered) => {
   hoveredTokens = hovered ? [token] : null;
 });
 
