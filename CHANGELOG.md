@@ -1,5 +1,3 @@
-# Changelog
-
 ## 1.1.2
 - Cleared release file mess.
 
