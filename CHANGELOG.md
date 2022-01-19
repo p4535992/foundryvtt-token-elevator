@@ -1,3 +1,7 @@
+1.1.2
+
+- Cleared release file mess.
+
 1.1.1
 
 - Minor changes in manifest and readme.
