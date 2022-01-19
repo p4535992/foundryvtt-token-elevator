@@ -1,5 +1,5 @@
 # Token Elevator
-Foundry VTT module: Change token elevation via hotkeys and mouse-wheel, priotizing hovered tokens over selected.
+Change token elevation via hotkeys and mouse-wheel, prioritizing hovered tokens over selected.
 
 ## Usage
 - Hover the mouse-pointer over a token and press the hotkeys to change its elevation in steps of +-5 or +-10.
