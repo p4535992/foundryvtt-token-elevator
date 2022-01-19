@@ -1,3 +1,7 @@
+1.1.1
+
+- Minor changes in manifest and readme.
+
 1.1.0
 
 - Merged clay.sweetser pull.
