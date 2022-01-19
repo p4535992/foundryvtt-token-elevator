@@ -7,8 +7,8 @@
   "minimumCoreVersion": "9",
   "compatibleCoreVersion": "9",
   "scripts": ["scripts/token-elevator.js"],
-  "manifest": "https://gitlab.com/Weissrolf/token-elevator/-/raw/main/module.json",
-  "download": "https://gitlab.com/Weissrolf/token-elevator/-/archive/v1.1.0/token-elevator-v1.1.0.zip",
   "url": "https://gitlab.com/Weissrolf/token-elevator",
-  "bugs": "https://gitlab.com/Weissrolf/token-elevator/-/issues"
+  "bugs": "https://gitlab.com/Weissrolf/token-elevator/-/issues",
+  "manifest": "https://gitlab.com/Weissrolf/token-elevator/-/raw/main/module.json",
+  "download": "https://gitlab.com/Weissrolf/token-elevator/-/archive/v1.1.0/token-elevator-v1.1.0.zip"
 }
