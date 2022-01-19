@@ -1,13 +1,12 @@
-1.1.2
+# Changelog
 
+## 1.1.2
 - Cleared release file mess.
 
-1.1.1
-
+## 1.1.1
 - Minor changes in manifest and readme.
 
-1.1.0
-
+## 1.1.0
 - Merged clay.sweetser pull.
 - Switched formatting rules to Prettier.
 - Small manual edits to formatting.
