@@ -1,3 +1,9 @@
+## 1.2.0
+- Added setting for base elevation level, and elevation change values.
+- Changed default keybind modifier for Reset to ALT+CTRL+SHIFT.
+- Changed names of several variables.
+- Corrected keybind setting text for Reset.
+
 ## 1.1.2
 - Cleared release file mess.
 
