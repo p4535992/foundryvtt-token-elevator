@@ -1,10 +1,10 @@
 # Token Elevator
-Change token elevation via hotkeys and mouse-wheel, prioritizing hovered tokens over selected.
+Change token elevation via hotkeys and mouse-wheel, prioritizing hovered tokens over selected. Base elevation level and elevation change steps can be configured by the GM.
 
 ## Usage
-- Hover the mouse-pointer over a token and press the hotkeys to change its elevation in steps of +-5 or +-10.
+- Hover the mouse-pointer over a token and press the hotkeys to change its elevation in standard or large steps.
 - Use the hotkeys to change elevation of all selected tokens while your mouse-pointer does *not* hover over a specific token.
-- Open a token's HUD and use the mouse-wheel over the elevation field to change the elevation of all selected tokens by +-5, press shift for +-10.   
+- Open a token's HUD and use the mouse-wheel over the elevation field to change the elevation of all selected tokens by standard steps, press shift for large steps.
 
 ## Preview (animated GIF)
 ![animated GIF](https://i.imgur.com/Pp3fA5R.gif)
