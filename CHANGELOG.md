@@ -1,3 +1,6 @@
+## 1.2.2
+- Minor edits to readme and manifest.
+
 ## 1.2.0
 - Added setting for base elevation level, and elevation change values.
 - Changed default keybind modifier for Reset to ALT+CTRL+SHIFT.
