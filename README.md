@@ -6,6 +6,8 @@ Change token elevation via hotkeys and mouse-wheel, prioritizing hovered tokens 
 - Use the hotkeys to change elevation of all selected tokens while your mouse-pointer does *not* hover over a specific token.
 - Open a token's HUD and use the mouse-wheel over the elevation field to change the elevation of all selected tokens by standard steps, press shift for large steps.
 
+The default hotkey is |\ on US/international keyboards and |<> on German ones.
+
 ## Preview (animated GIF)
 ![animated GIF](https://i.imgur.com/Pp3fA5R.gif)
 
