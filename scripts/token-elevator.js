@@ -62,6 +62,7 @@ async function setKeybindings() {
       editable: [{key: key.preKeys, modifiers: key.keyMod}],
       onDown: () => {
         setElevation(key.elevChg); // call to change token elevation
+        event.preventDefault();
       },
     });
   }
