@@ -1,7 +1,10 @@
-## 1.2.3
+### 1.2.4
+- Correct default browser keybind prevention according to Foundry API.
+
+### 1.2.3
 - Prevent default browser key events for keybinds.
 
-## 1.2.2
+### 1.2.2
 - Minor edits to readme and manifest.
 
 ## 1.2.0
@@ -10,10 +13,10 @@
 - Changed names of several variables.
 - Corrected keybind setting text for Reset.
 
-## 1.1.2
+### 1.1.2
 - Cleared release file mess.
 
-## 1.1.1
+### 1.1.1
 - Minor changes in manifest and readme.
 
 ## 1.1.0
