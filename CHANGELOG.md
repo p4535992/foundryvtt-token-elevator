@@ -1,3 +1,6 @@
+## 1.2.3
+- Prevent default browser key events for keybinds.
+
 ## 1.2.2
 - Minor edits to readme and manifest.
 
