@@ -4,7 +4,7 @@ let baseElev = 0; // Default base elevation
 let standardTick = 5; // Default standard elevation change tick
 let largeTick = 10; // Default large elevation change tick
 
-// Change token elevation or reset to 0, prefer hovered tokens over selected
+// Change token elevation or reset to baseElev, prefer hovered tokens over selected
 async function setElevation(value) {
   const tokens = hoveredTokens ?? canvas.tokens.controlled; // hovered or selected?
   const updates = tokens.map((token) => ({

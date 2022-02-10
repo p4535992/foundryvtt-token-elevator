@@ -1,3 +1,6 @@
+### 1.2.5
+- Small changes to comments
+
 ### 1.2.4
 - Correct default browser keybind prevention according to Foundry API.
 
