@@ -12,7 +12,7 @@ The default hotkey is |\ on US/international keyboards and |<> on German ones.
 ![animated GIF](https://i.imgur.com/Pp3fA5R.gif)
 
 ## Known issues
-- Default keybind for resetting token elevation to 0 uses ALT modifier, which conflicts with Foundry's default for "Highlight Objects", because the latter messes with hover on detection.
+- Default keybind for resetting token elevation to 0 uses ALT modifier, which conflicts with Foundry's default for "Highlight Objects", because the latter messes with hover on detection. Make sure to press a different modifier before pressing ALT.
 
 ## Changelog
 See [CHANGELOG](./CHANGELOG.md) file for details.
