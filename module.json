@@ -11,4 +11,16 @@
   "bugs": "https://gitlab.com/Weissrolf/token-elevator/-/issues",
   "manifest": "https://gitlab.com/Weissrolf/token-elevator/-/raw/main/module.json",
   "download": "https://gitlab.com/Weissrolf/token-elevator/-/archive/v1.2.5/token-elevator-v1.2.5.zip"
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json"
+    }
+  ]
 }

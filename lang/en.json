@@ -1,0 +1,6 @@
+{
+  "te.base": "Base elevation level",
+  "te.standard": "Standard elevation change",
+  "te.large": "Large elevation change",
+  "te.hint": "Browser will reload when settings are saved!"
+}

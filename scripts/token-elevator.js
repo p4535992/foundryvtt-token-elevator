@@ -21,15 +21,15 @@ async function setElevation(value) {
 // Register settings and set defaults
 async function setSettings() {
   const preSets = [
-    {id: "bt", name: "Base elevation level", default: baseElev},
-    {id: "st", name: "Standard elevation change", default: standardTick},
-    {id: "lt", name: "Large elevation change", default: largeTick},
+    {id: "bt", name: game.i18n.localize("te.base"), default: baseElev},
+    {id: "st", name: game.i18n.localize("te.standard"), default: standardTick},
+    {id: "lt", name: game.i18n.localize("te.large"), default: largeTick},
   ];
   // Set up all the above settings in one loop
   for (const set of preSets) {
     game.settings.register("token-elevator", `te-${set.id}`, {
       name: set.name,
-      hint: "Browser will reload when settings are saved!",
+      hint: game.i18n.localize("te.hint"),
       scope: "world",
       config: true,
       type: Number,
@@ -37,9 +37,6 @@ async function setSettings() {
       onChange: foundry.utils.debounce(() => window.location.reload(), 100),
     });
   }
-  standardTick = game.settings.get("token-elevator", "te-st");
-  largeTick = game.settings.get("token-elevator", "te-lt");
-  baseElev = game.settings.get("token-elevator", "te-bt");
 }
 
 // Register keybindings and set defaults
@@ -72,6 +69,10 @@ Hooks.on("init", () => {
   // Register all module settings and set default
   setSettings();
   setKeybindings();
+  // Take over custom user settings
+  baseElev = game.settings.get("token-elevator", "te-bt");
+  standardTick = game.settings.get("token-elevator", "te-st");
+  largeTick = game.settings.get("token-elevator", "te-lt");
 });
 
 // Track which token is currently being hovered on, or set to null if none

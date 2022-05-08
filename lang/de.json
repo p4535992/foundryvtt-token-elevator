@@ -1,0 +1,6 @@
+{
+  "te.base": "Basishöhe",
+  "te.standard": "Standard Höhenveränderung",
+  "te.large": "Große Höhenveränderung",
+  "te.hint": "Browser lädt beim Speichern der Einstellungen neu!"
+}
