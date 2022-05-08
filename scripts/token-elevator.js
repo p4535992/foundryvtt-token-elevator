@@ -21,9 +21,9 @@ async function setElevation(value) {
 // Register settings and set defaults
 async function setSettings() {
   const preSets = [
-    {id: "bt", name: game.i18n.localize("token-elevator.base"), default: baseElev},
-    {id: "st", name: game.i18n.localize("token-elevator.standard"), default: standardTick},
-    {id: "lt", name: game.i18n.localize("token-elevator.large"), default: largeTick},
+    {id: "bt", name: game.i18n.localize("settings.base"), default: baseElev},
+    {id: "st", name: game.i18n.localize("settings.standard"), default: standardTick},
+    {id: "lt", name: game.i18n.localize("settings.large"), default: largeTick},
   ];
   // Set up all the above settings in one loop
   for (const set of preSets) {
@@ -41,15 +41,15 @@ async function setSettings() {
 
 // Register keybindings and set defaults
 async function setKeybindings() {
-  const cTxt = "Change token elevation by";
-  const rTxt = "Reset token elevation to";
+  const resetText = game.i18n.localize("keybindings.resetText");
+  const changeText = game.i18n.localize("keybindings.changeText");
   const uniKey = "IntlBackslash"; // Default single key for everything
   const preKeys = [
-    {id: 0, name: rTxt, elevChg: baseElev, preKeys: uniKey, keyMod: ["Control", "Alt", "Shift"]},
-    {id: 1, name: cTxt, elevChg: standardTick, preKeys: uniKey, keyMod: []},
-    {id: -1, name: cTxt, elevChg: -standardTick, preKeys: uniKey, keyMod: ["Control"]},
-    {id: 2, name: cTxt, elevChg: largeTick, preKeys: uniKey, keyMod: ["Shift"]},
-    {id: -2, name: cTxt, elevChg: -largeTick, preKeys: uniKey, keyMod: ["Control", "Shift"]},
+    {id: 0, name: resetText, elevChg: baseElev, preKeys: uniKey, keyMod: ["Control", "Alt", "Shift"]},
+    {id: 1, name: changeText, elevChg: standardTick, preKeys: uniKey, keyMod: []},
+    {id: -1, name: changeText, elevChg: -standardTick, preKeys: uniKey, keyMod: ["Control"]},
+    {id: 2, name: changeText, elevChg: largeTick, preKeys: uniKey, keyMod: ["Shift"]},
+    {id: -2, name: changeText, elevChg: -largeTick, preKeys: uniKey, keyMod: ["Control", "Shift"]},
   ];
   // Set up all the above keybindings in one loop
   for (const key of preKeys) {

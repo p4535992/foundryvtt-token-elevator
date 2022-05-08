@@ -1,8 +1,14 @@
 {
-  "token-elevator": {
+  "settings": {
     "base": "Basishöhe",
     "standard": "Standard Höhenveränderung",
     "large": "Große Höhenveränderung",
     "hint": "Browser lädt nach Speichern der Einstellungen neu!"
+  }
+},
+{
+  "keybindings": {
+    "resetText": "Höhe der Spielfigur zurücksetzen auf",
+    "changeText": "Höhe der Spielfigur ändern um"
   }
 }

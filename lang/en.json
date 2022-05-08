@@ -4,5 +4,10 @@
     "standard": "Standard elevation change",
     "large": "Large elevation change",
     "hint": "Browser will reload when settings are saved!"
+  },
+{
+  "keybindings": {
+    "resetText": "Reset token elevation to",
+    "changeText": "Change token elevation by"
   }
 }
