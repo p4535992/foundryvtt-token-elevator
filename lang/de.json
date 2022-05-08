@@ -8,7 +8,7 @@
 },
 {
   "keybindings": {
-    "resetText": "Höhe der Spielfigur zurücksetzen auf",
-    "changeText": "Höhe der Spielfigur ändern um"
+    "resetText": "Zurücksetzen der Höhe des Tokens auf",
+    "changeText": "Ändern der Höhe des Tokens um"
   }
 }
