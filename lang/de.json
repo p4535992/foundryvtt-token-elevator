@@ -1,6 +1,8 @@
 {
-  "te.base": "Basishöhe",
-  "te.standard": "Standard Höhenveränderung",
-  "te.large": "Große Höhenveränderung",
-  "te.hint": "Browser lädt nach Speichern der Einstellungen neu!"
+  "token-elevator": {
+    "base": "Basishöhe",
+    "standard": "Standard Höhenveränderung",
+    "large": "Große Höhenveränderung",
+    "hint": "Browser lädt nach Speichern der Einstellungen neu!"
+  }
 }
