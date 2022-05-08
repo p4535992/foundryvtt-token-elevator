@@ -21,15 +21,15 @@ async function setElevation(value) {
 // Register settings and set defaults
 async function setSettings() {
   const preSets = [
-    {id: "bt", name: game.i18n.localize("te.base"), default: baseElev},
-    {id: "st", name: game.i18n.localize("te.standard"), default: standardTick},
-    {id: "lt", name: game.i18n.localize("te.large"), default: largeTick},
+    {id: "bt", name: game.i18n.localize("token-elevator.base"), default: baseElev},
+    {id: "st", name: game.i18n.localize("token-elevator.standard"), default: standardTick},
+    {id: "lt", name: game.i18n.localize("token-elevator.large"), default: largeTick},
   ];
   // Set up all the above settings in one loop
   for (const set of preSets) {
     game.settings.register("token-elevator", `te-${set.id}`, {
       name: set.name,
-      hint: game.i18n.localize("te.hint"),
+      hint: game.i18n.localize("token-elevator.hint"),
       scope: "world",
       config: true,
       type: Number,
