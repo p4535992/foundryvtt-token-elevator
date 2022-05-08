@@ -1,3 +1,8 @@
+## 1.3.0
+- Added localization code.
+- Addes English localization.
+- Added German localization.
+
 ### 1.2.5
 - Small changes to comments
 

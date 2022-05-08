@@ -18,9 +18,7 @@ The default hotkey is |\ on US/international keyboards and |<> on German ones.
 See [CHANGELOG](./CHANGELOG.md) file for details.
 
 ## Future plans
-- Localization.
 - Mouse-wheel changes via token mouse-over instead of having to use the token HUD.
-- Code optimizations once I gained more experience in Javascript and the various APIs (this is my first foray into all of this).
 
 ## Credits
 Most of this module's code was made possible by the generous contributions of the Foundry VTT Discord channel #module-development. 
