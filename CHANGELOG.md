@@ -1,3 +1,6 @@
+### 1.3.1
+- Fixed possible localization race condition for settings and keybindings.
+
 ## 1.3.0
 - Added localization code.
 - Addes English localization.

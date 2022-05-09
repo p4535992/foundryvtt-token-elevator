@@ -4,6 +4,6 @@
   "te.settings.large": "Large elevation change",
   "te.settings.hint": "Browser will reload when settings are saved!",
   
-  "te.keybindings.resetText": "Reset token elevation to",
-  "te.keybindings.changeText": "Change token elevation by"
+  "te.keybindings.resetText": "Reset token elevation to ",
+  "te.keybindings.changeText": "Change token elevation by "
 }

@@ -4,6 +4,6 @@
   "te.settings.large": "Große Höhenveränderung",
   "te.settings.hint": "Browser lädt nach Speichern der Einstellungen neu!",
   
-  "te.keybindings.resetText": "Zurücksetzen der Höhe des Tokens auf",
-  "te.keybindings.changeText": "Ändern der Höhe des Tokens um"
+  "te.keybindings.resetText": "Zurücksetzen der Tokenhöhe auf ",
+  "te.keybindings.changeText": "Ändern der Tokenhöhe um "
 }

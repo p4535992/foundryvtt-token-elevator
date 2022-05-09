@@ -1,8 +1,8 @@
 // Module scope variables, used by multiple functions
-let hoveredTokens;
 let baseElev = 0; // Default base elevation
 let standardTick = 5; // Default standard elevation change tick
 let largeTick = 10; // Default large elevation change tick
+let hoveredTokens;
 
 // Change token elevation or reset to baseElev, prefer hovered tokens over selected
 async function setElevation(value) {
@@ -45,17 +45,17 @@ async function setKeybindings() {
   const changeText = game.i18n.localize("te.keybindings.changeText");
   const uniKey = "IntlBackslash"; // Default single key for everything
   const preKeys = [
-    {id: 0, name: resetText, elevChg: baseElev, preKeys: uniKey, keyMod: ["Control", "Alt", "Shift"]},
-    {id: 1, name: changeText, elevChg: standardTick, preKeys: uniKey, keyMod: []},
-    {id: -1, name: changeText, elevChg: -standardTick, preKeys: uniKey, keyMod: ["Control"]},
-    {id: 2, name: changeText, elevChg: largeTick, preKeys: uniKey, keyMod: ["Shift"]},
-    {id: -2, name: changeText, elevChg: -largeTick, preKeys: uniKey, keyMod: ["Control", "Shift"]},
+    {id: 0, name: resetText+baseElev, preKeys: uniKey, keyMod: ["Control", "Alt", "Shift"]},
+    {id: 1, name: changeText+standardTick, preKeys: uniKey, keyMod: []},
+    {id: -1, name: changeText+-standardTick, preKeys: uniKey, keyMod: ["Control"]},
+    {id: 2, name: changeText+largeTick, preKeys: uniKey, keyMod: ["Shift"]},
+    {id: -2, name: changeText+-largeTick, preKeys: uniKey, keyMod: ["Control", "Shift"]},
   ];
   // Set up all the above keybindings in one loop
   for (const key of preKeys) {
     game.keybindings.register("token-elevator", `te-${key.id}`, {
-      name: `${key.name} ${key.elevChg}`,
-      //      hint: "Change token elevation of hovered or selected tokens.",
+      name: `${key.name}`,
+      // hint: "Change token elevation of hovered or selected tokens.",
       editable: [{key: key.preKeys, modifiers: key.keyMod}],
       onDown: () => {
         setElevation(key.elevChg); // call to change token elevation
@@ -65,7 +65,7 @@ async function setKeybindings() {
   }
 }
 
-Hooks.on("init", () => {
+Hooks.on("i18nInit", () => {
   // Register all module settings and set default
   setSettings();
   setKeybindings();
