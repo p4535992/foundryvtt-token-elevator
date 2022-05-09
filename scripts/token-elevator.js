@@ -29,7 +29,7 @@ async function setSettings() {
   for (const set of preSets) {
     game.settings.register("token-elevator", `te-${set.id}`, {
       name: set.name,
-      hint: game.i18n.localize("token-elevator.hint"),
+      hint: game.i18n.localize("te.settings.hint"),
       scope: "world",
       config: true,
       type: Number,
