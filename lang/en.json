@@ -1,14 +1,9 @@
 {
-  "settings": {
-    "base": "Base elevation level",
-    "standard": "Standard elevation change",
-    "large": "Large elevation change",
-    "hint": "Browser will reload when settings are saved!"
-  }
-},
-{
-  "keybindings": {
-    "resetText": "Reset token elevation to",
-    "changeText": "Change token elevation by"
-  }
+  "te.settings.base": "Base elevation level",
+  "te.settings.standard": "Standard elevation change",
+  "te.settings.large": "Large elevation change",
+  "te.settings.hint": "Browser will reload when settings are saved!",
+
+  "te.keybindings.resetText": "Reset token elevation to",
+  "te.keybindings.changeText": "Change token elevation by"
 }

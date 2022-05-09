@@ -21,9 +21,9 @@ async function setElevation(value) {
 // Register settings and set defaults
 async function setSettings() {
   const preSets = [
-    {id: "bt", name: game.i18n.localize("settings.base"), default: baseElev},
-    {id: "st", name: game.i18n.localize("settings.standard"), default: standardTick},
-    {id: "lt", name: game.i18n.localize("settings.large"), default: largeTick},
+    {id: "bt", name: game.i18n.localize("te.settings.base"), default: baseElev},
+    {id: "st", name: game.i18n.localize("te.settings.standard"), default: standardTick},
+    {id: "lt", name: game.i18n.localize("te.settings.large"), default: largeTick},
   ];
   // Set up all the above settings in one loop
   for (const set of preSets) {
@@ -41,8 +41,8 @@ async function setSettings() {
 
 // Register keybindings and set defaults
 async function setKeybindings() {
-  const resetText = game.i18n.localize("keybindings.resetText");
-  const changeText = game.i18n.localize("keybindings.changeText");
+  const resetText = game.i18n.localize("te.keybindings.resetText");
+  const changeText = game.i18n.localize("te.keybindings.changeText");
   const uniKey = "IntlBackslash"; // Default single key for everything
   const preKeys = [
     {id: 0, name: resetText, elevChg: baseElev, preKeys: uniKey, keyMod: ["Control", "Alt", "Shift"]},
