@@ -45,16 +45,16 @@ async function setKeybindings() {
   const changeText = game.i18n.localize("te.keybindings.changeText");
   const uniKey = "IntlBackslash"; // Default single key for everything
   const preKeys = [
-    {id: 0, name: resetText+baseElev, preKeys: uniKey, keyMod: ["Control", "Alt", "Shift"]},
-    {id: 1, name: changeText+standardTick, preKeys: uniKey, keyMod: []},
-    {id: -1, name: changeText+-standardTick, preKeys: uniKey, keyMod: ["Control"]},
-    {id: 2, name: changeText+largeTick, preKeys: uniKey, keyMod: ["Shift"]},
+    {id: 0, name: resetText, elevChg: baseElev, preKeys: uniKey, keyMod: ["Control", "Alt", "Shift"]},
+    {id: 1, name: changeText, elevChg: standardTick, preKeys: uniKey, keyMod: []},
+    {id: -1, name: changeText, elevChg: -standardTick, preKeys: uniKey, keyMod: ["Control"]},
+    {id: 2, name: changeText, elevChg: largeTick, preKeys: uniKey, keyMod: ["Shift"]},
     {id: -2, name: changeText+-largeTick, preKeys: uniKey, keyMod: ["Control", "Shift"]},
   ];
   // Set up all the above keybindings in one loop
   for (const key of preKeys) {
     game.keybindings.register("token-elevator", `te-${key.id}`, {
-      name: `${key.name}`,
+      name: `${key.name+key.elevChg}`,
       // hint: "Change token elevation of hovered or selected tokens.",
       editable: [{key: key.preKeys, modifiers: key.keyMod}],
       onDown: () => {
