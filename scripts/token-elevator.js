@@ -2,7 +2,7 @@
 let baseElev = 0; // Default base elevation
 let standardTick = 5; // Default standard elevation change tick
 let largeTick = 10; // Default large elevation change tick
-let hoveredTokens; // pointer to affected tokens
+let hoveredTokens; // Pointer to affected tokens
 
 // Change token elevation or reset to baseElev, prefer hovered tokens over selected
 async function setElevation(value) {
