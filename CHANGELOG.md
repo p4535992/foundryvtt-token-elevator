@@ -1,3 +1,6 @@
+### 1.3.3
+- Bugfix for the bugfix of broken keybindings
+
 ### 1.3.2
 - Bugfix for broken keybindings
   ("Data Validation Errors, elevation: must be a finite number")
