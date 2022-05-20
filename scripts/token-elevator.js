@@ -54,7 +54,7 @@ async function setKeybindings() {
   // Set up all the above keybindings in one loop
   for (const key of preKeys) {
     game.keybindings.register("token-elevator", `te-${key.id}`, {
-      name: `${key.name+key.elevationChange}`,
+      name: `${key.name + key.elevationChange}`,
       // hint: "Change token elevation of hovered or selected tokens.",
       editable: [{key: key.preKeys, modifiers: key.keyMod}],
       onDown: () => {
