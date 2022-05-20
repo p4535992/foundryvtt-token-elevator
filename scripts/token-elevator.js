@@ -1,18 +1,18 @@
 // Module scope variables, used by multiple functions
-let baseElev = 0; // Default base elevation
+let baseElevation = 0; // Default base elevation
 let standardTick = 5; // Default standard elevation change tick
 let largeTick = 10; // Default large elevation change tick
 let hoveredTokens; // Pointer to affected tokens
 
-// Change token elevation or reset to baseElev, prefer hovered tokens over selected
-async function setElevation(value) {
+// Change token elevation or reset to baseElevation, prefer hovered tokens over selected
+async function setElevation(elevationChange) {
   const tokens = hoveredTokens ?? canvas.tokens.controlled; // hovered or selected?
   const updates = tokens.map((token) => ({
     _id: token.id,
-    elevation: value === 0 ? 0 : token.data.elevation + value,
+    elevation: elevationChange === 0 ? 0 : token.data.elevation + elevationChange,
   }));
   await canvas.scene.updateEmbeddedDocuments("Token", updates);
-  // Force token HUD to re-render, so that its elevation input shows the new height
+  // Force token HUD to re-render, to make its elevation input shows the new height
   if (canvas.hud.token.rendered) {
     canvas.hud.token.render();
   }
@@ -21,7 +21,7 @@ async function setElevation(value) {
 // Register settings and set defaults
 async function setSettings() {
   const preSets = [
-    {id: "bt", name: game.i18n.localize("te.settings.base"), default: baseElev},
+    {id: "bt", name: game.i18n.localize("te.settings.base"), default: baseElevation},
     {id: "st", name: game.i18n.localize("te.settings.standard"), default: standardTick},
     {id: "lt", name: game.i18n.localize("te.settings.large"), default: largeTick},
   ];
@@ -45,20 +45,20 @@ async function setKeybindings() {
   const changeText = game.i18n.localize("te.keybindings.changeText");
   const uniKey = "IntlBackslash"; // Default single key for everything
   const preKeys = [
-    {id: 0, name: resetText, elevChg: baseElev, preKeys: uniKey, keyMod: ["Control", "Alt", "Shift"]},
-    {id: 1, name: changeText, elevChg: standardTick, preKeys: uniKey, keyMod: []},
-    {id: -1, name: changeText, elevChg: -standardTick, preKeys: uniKey, keyMod: ["Control"]},
-    {id: 2, name: changeText, elevChg: largeTick, preKeys: uniKey, keyMod: ["Shift"]},
+    {id: 0, name: resetText, elevationChange: baseElevation, preKeys: uniKey, keyMod: ["Control", "Alt", "Shift"]},
+    {id: 1, name: changeText, elevationChange: standardTick, preKeys: uniKey, keyMod: []},
+    {id: -1, name: changeText, elevationChange: -standardTick, preKeys: uniKey, keyMod: ["Control"]},
+    {id: 2, name: changeText, elevationChange: largeTick, preKeys: uniKey, keyMod: ["Shift"]},
     {id: -2, name: changeText+-largeTick, preKeys: uniKey, keyMod: ["Control", "Shift"]},
   ];
   // Set up all the above keybindings in one loop
   for (const key of preKeys) {
     game.keybindings.register("token-elevator", `te-${key.id}`, {
-      name: `${key.name+key.elevChg}`,
+      name: `${key.name+key.elevationChange}`,
       // hint: "Change token elevation of hovered or selected tokens.",
       editable: [{key: key.preKeys, modifiers: key.keyMod}],
       onDown: () => {
-        setElevation(key.elevChg); // call to change token elevation
+        setElevation(key.elevationChange); // call to change token elevation
         return true;
       },
     });
@@ -70,7 +70,7 @@ Hooks.on("i18nInit", () => {
   setSettings();
   setKeybindings();
   // Take over custom user settings
-  baseElev = game.settings.get("token-elevator", "te-bt");
+  baseElevation = game.settings.get("token-elevator", "te-bt");
   standardTick = game.settings.get("token-elevator", "te-st");
   largeTick = game.settings.get("token-elevator", "te-lt");
 });
@@ -84,8 +84,8 @@ Hooks.on("hoverToken", (token, hovered) => {
 Hooks.on("renderTokenHUD", () => {
   $(".elevation").on("wheel", (catchEvent) => {
     const originalEvent = catchEvent.originalEvent;
-    const elevChg = originalEvent.shiftKey ? largeTick : standardTick;
+    const elevationChange = originalEvent.shiftKey ? largeTick : standardTick;
     const sign = originalEvent.wheelDelta > 0 ? 1 : -1;
-    setElevation(elevChg * sign);
+    setElevation(elevationChange * sign);
   });
 });
