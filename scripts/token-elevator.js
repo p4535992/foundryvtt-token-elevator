@@ -12,7 +12,7 @@ async function setElevation(elevationChange) {
     elevation: elevationChange === 0 ? 0 : token.data.elevation + elevationChange,
   }));
   await canvas.scene.updateEmbeddedDocuments("Token", updates);
-  // Force token HUD to re-render, to make its elevation input shows the new height
+  // Force token HUD to re-render, to make its elevation input show the new height
   if (canvas.hud.token.rendered) {
     canvas.hud.token.render();
   }
