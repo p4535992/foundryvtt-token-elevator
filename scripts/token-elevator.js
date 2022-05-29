@@ -21,7 +21,7 @@ async function setElevation(elevationChange) {
 // Register settings and set defaults
 async function setSettings() {
   const preSets = [
-    {id: "bt", name: game.i18n.localize("te.settings.base"), default: baseElevation},
+    {id: "be", name: game.i18n.localize("te.settings.base"), default: baseElevation},
     {id: "st", name: game.i18n.localize("te.settings.standard"), default: standardTick},
     {id: "lt", name: game.i18n.localize("te.settings.large"), default: largeTick},
   ];
@@ -70,7 +70,7 @@ Hooks.on("i18nInit", () => {
   setSettings();
   setKeybindings();
   // Take over custom user settings
-  baseElevation = game.settings.get("token-elevator", "te-bt");
+  baseElevation = game.settings.get("token-elevator", "te-be");
   standardTick = game.settings.get("token-elevator", "te-st");
   largeTick = game.settings.get("token-elevator", "te-lt");
 });
