@@ -1,3 +1,6 @@
+## 1.4.0
+- Improved Foundry v10 compatibility.
+
 ### 1.3.3
 - Bugfix for the bugfix of broken keybindings.
 

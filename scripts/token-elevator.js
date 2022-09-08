@@ -9,7 +9,7 @@ async function setElevation(elevationChange) {
   const tokens = hoveredTokens ?? canvas.tokens.controlled; // hovered or selected?
   const updates = tokens.map((token) => ({
     _id: token.id,
-    elevation: elevationChange === 0 ? 0 : token.data.elevation + elevationChange,
+    elevation: elevationChange === 0 ? 0 : token.document.elevation + elevationChange,
   }));
   await canvas.scene.updateEmbeddedDocuments("Token", updates);
   // Force token HUD to re-render, to make its elevation input show the new height
