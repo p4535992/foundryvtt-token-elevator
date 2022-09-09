@@ -1,3 +1,6 @@
+### 1.4.1
+- Set minimum Foundry version to v10.
+
 ## 1.4.0
 - Improved Foundry v10 compatibility.
 
